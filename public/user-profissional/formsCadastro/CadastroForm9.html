@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro9</title>
+    <link rel="stylesheet" href="css/CadastroForm10.css">
+    <link rel="shortcut icon" href="img/menuTop.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <a href="CadastroForm8.html"><img class="seta" src="img/seta.svg" alt="seta"></a>
+    <h1>Cadastro</h1>
+    <div class="container">
+
+      <div class= "progress-bar">
+        <div class="step" >
+          <div class="bullet"id="bullet1">
+        </div>
+      </div>
+  
+        <div class="step" > 
+          <div class="bullet" id="bullet2">
+        </div>
+        </div>
+  
+        <div class="step">
+          <div class="bullet" id="bullet3">
+        </div> 
+        </div>
+
+        <div class="step">
+          <div class="bullet" id="bullet4">
+        </div> 
+        </div>
+
+        <div class="step">
+          <div class="bullet" id="bullet5">
+        </div> 
+        </div>
+
+        <div class="step">
+          <div class="bullet" id="bullet6">
+        </div> 
+        </div>
+
+        <div class="step">
+          <div class="bullet" id="bullet7">
+        </div> 
+        </div>
+  
+        <div class="step">
+          <div class="bullet" id="bullet8">
+        </div>
+        </div>
+      </div>
+  </div>
+    <p class="pessoais">Confirmação e aceite dos termos e condições</p>
+    <div class="content">
+        <div class="content1">
+          <label for=""> <input type="checkbox" id="checkbox1">Eu li e concordo com os <span>Termos e Condições</span> de uso da plataforma Aloti como prestador de serviços.</label>
+          <label for=""> <input type="checkbox" id="checkbox2">Estou ciente da <span>Política de Privacidade</span> do Aloti e autorizo o uso dos meus dados para fins de operação da plataforma.</label>
+            
+        </div>
+
+        <div class="content2">
+          <label for=""> <input type="checkbox" id="checkbox3">Eu li e concordo com os Termos e Condições de uso da plataforma Aloti como prestador de serviços.</label>
+          <label for=""> <input type="checkbox" id="checkbox4">Estou ciente da Política de Privacidade do Aloti e autorizo o uso dos meus dados para fins de operação da plataforma.</label>
+          
+        </div>
+    </div>
+
+    <div style="display: flex; text-align: center; justify-content: center; align-items: center; margin-top: 20px;">
+    <i class="fas fa-exclamation-circle" style="color: #F98E02; margin-right: 5px; margin-bottom: 5px;"></i>
+    <p style="text-align: center;">Ao clicar em 'Finalizar Cadastro', estou formalizando meu consentimento e meu compromisso  <br> de respeitar as diretrizes da plataforma.</p>
+    </div>
+
+        <button type="submit"  id="submit" class="botao" disabled  style="background-color: lightgray;">Finalizar cadastro</button>
+
+
+        <script>
+          function verificarCheckboxes() {
+              const checkbox1 = document.getElementById("checkbox1").checked;
+              const checkbox2 = document.getElementById("checkbox2").checked;
+              const checkbox3 = document.getElementById("checkbox3").checked;
+              const checkbox4 = document.getElementById("checkbox4").checked;
+      
+              const finalizarCadastro = document.getElementById("submit");
+      
+              // Habilita o botão se todas as checkboxes estiverem marcadas
+              if (checkbox1 && checkbox2 && checkbox3 && checkbox4) {
+                  finalizarCadastro.disabled = false;
+                  finalizarCadastro.style.backgroundColor = "#34A087"; // Exemplo de cor verde
+              } else {
+                  finalizarCadastro.disabled = true;
+                  finalizarCadastro.style.backgroundColor = "lightgray";
+              }
+          }
+      
+          // Adiciona um evento de mudança (change) para as checkboxes
+          document.getElementById("checkbox1").addEventListener("change", verificarCheckboxes);
+          document.getElementById("checkbox2").addEventListener("change", verificarCheckboxes);
+          document.getElementById("checkbox3").addEventListener("change", verificarCheckboxes);
+          document.getElementById("checkbox4").addEventListener("change", verificarCheckboxes);
+      </script>
+
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script> <!-- Adiciona a biblioteca de autenticação -->
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+        
+      <script>
+        // Firebase config (substitua pelos dados do seu Firebase)
+        const firebaseConfig = {
+            apiKey: "AIzaSyDk_gzIjpDebMURwi4pKn40PASAWoEsQS0",
+            authDomain: "aloti-b915b.firebaseapp.com",
+            databaseURL: "https://aloti-b915b-default-rtdb.firebaseio.com",
+            projectId: "aloti-b915b",
+            storageBucket: "aloti-b915b.appspot.com",
+            messagingSenderId: "474323336877",
+            appId: "1:474323336877:web:40d408027c0f50f24b5024"
+        };
+        
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.database();
+  
+  // Função para carregar dados do localStorage
+  function carregarDados() {
+        const dados = {
+            DadosPessoais: {
+                name: localStorage.getItem('name'),
+                gender: localStorage.getItem('gender'),
+                dateOfBirth: localStorage.getItem('dateOfBirth'),
+                cpf: localStorage.getItem('cpf'),
+                rg: localStorage.getItem('rg'),
+                celular: localStorage.getItem('celular'),
+                email: localStorage.getItem('email'),
+            },
+
+            endereco: {
+                cep: localStorage.getItem('cep'),
+                rua: localStorage.getItem('rua'),
+                number: localStorage.getItem('number'),
+                complemento: localStorage.getItem('complemento'),
+                bairro: localStorage.getItem('bairro'),
+                cidade: localStorage.getItem('cidade'),
+                estado: localStorage.getItem('estado'),
+                pais: localStorage.getItem('pais'),
+            },
+
+            areaAtuacao: {
+                areaAtuacao: localStorage.getItem('areaAtuacao'),
+                registroProfissional: localStorage.getItem('registroProfissional'),
+                instituicaoFormacao: localStorage.getItem('instituicaoFormacao'),
+                anoFormacao: localStorage.getItem('anoFormacao'),
+                linkComprovacao: localStorage.getItem('linkComprovacao'),
+                input_file: localStorage.getItem('input_file'),
+                precoHora: localStorage.getItem('precoHora'),
+                
+            },
+
+            licencas: JSON.parse(localStorage.getItem('licenses')) || [],
+                experiencia: localStorage.getItem('experience') || "",
+
+            disponibilidade: {
+            dias: JSON.parse(localStorage.getItem('disponibilidade'))?.dias || [],
+            horarios: JSON.parse(localStorage.getItem('disponibilidade'))?.horarios || [],
+            customizada: JSON.parse(localStorage.getItem('disponibilidadeCustomizada')) || {}
+        },
+                       
+            infoPagamentos: {
+            banco: localStorage.getItem('banco'),
+            agencia: localStorage.getItem('agencia'),
+            conta: localStorage.getItem('conta'),
+            tipoConta: localStorage.getItem('tipoConta'),
+        },
+            
+            atividadesPreferidas: JSON.parse(localStorage.getItem('atividadesPreferidas')),
+            interessesEntretenimento: JSON.parse(localStorage.getItem('interessesEntretenimento'))
+        };
+
+        // Autenticação do usuário e envio para o Firebase
+        firebase.auth().onAuthStateChanged((user) => {
+                if (user) {
+                    const uid = user.uid;
+                    db.ref(`user-profissional/${uid}`).set(dados)
+                        .then(() => {
+                            //alert('Dados enviados com sucesso!');
+                            window.location.href = "../homepage/homepage.html"; // Redireciona para a página inicial
+                            localStorage.clear();
+                        })
+                        .catch((error) => {
+                            console.error('Erro ao enviar os dados: ', error);
+                        });
+
+                    if (dados.licencas.length > 0) {
+                        dados.licencas.forEach(licenca => {
+                            db.ref(`user-profissional/${uid}/licencas`).push(licenca);
+                        });
+                    }
+                } else {
+                    alert("Usuário não autenticado.");
+                }
+            });
+        }
+
+    // Evento de clique para o botão de finalizar cadastro
+    document.getElementById("submit").addEventListener("click", function() {
+        if (!this.disabled) {
+            carregarDados();
+        }
+    });
+</script>
+
+<script>
+    if (licencas.length > 0) {
+        licencas.forEach(licenca => {
+            // Enviar cada licença para o Firebase
+            db.ref(`licencas/${uid}`).push({
+                nome: licenca.nome,
+                categoria: licenca.categoria,
+                instituicao: licenca.instituicao,
+                dataInicio: licenca.dataInicio,
+                dataConclusao: licenca.dataConclusao,
+                comprovacao: licenca.comprovacao
+            });
+        });
+    }
+</script>
+
+</body>
+</html>

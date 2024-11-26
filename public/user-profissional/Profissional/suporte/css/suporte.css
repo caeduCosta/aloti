@@ -1,0 +1,375 @@
+@font-face {
+	font-family: "Nunito_bold";
+	src: url(../../font/Nunito-Bold.ttf);
+  }
+  
+  @font-face {
+	font-family: "Nunito_medium";
+	src: url(../../font/Nunito-Medium.ttf);
+  }
+  
+  @font-face {
+	font-family: "Nunito_regular";
+	src: url(../../font/Nunito-Regular.ttf);
+  } 
+  
+
+body {
+    font-family: "Nunito";
+    background-color: #F5F5F5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 20px;  
+    max-width: 100%; /* Garante que a largura da container seja ajustável */
+    box-sizing: border-box;
+}
+.titulo{
+    color: #626264;
+    font-weight: 800;
+    font-family: "Nunito_bold";
+    margin-top: 8px;
+    margin-left: 8px;
+    
+}
+.search{
+    display: flex;
+    align-items: center;
+    background-color: #FFFFFF;
+    width: 700px;
+    margin: 20px auto;
+    border-radius: 22px;
+    padding: 5px 10px;
+    color: #666666;
+}
+#searchImput{
+    padding: 8px;
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    outline: none;
+    font-family: "Nunito-regular";
+    font-weight: 650;
+    font-size: 16px;
+    margin-left: 6px;
+}
+.search label{
+    height: 20px;
+}
+.lupa{
+    margin-left: 10px;
+}
+
+.container-cards {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente */
+    margin-top: 70px;
+}
+
+.card{
+    background-color: #FFFFFF;
+    width: 290px;
+    border-radius: 22px;
+    margin-left: 15px;
+}
+.titulo-card{
+   text-align: center;
+   color: #414D4D;
+   margin-top: 5px;
+   font-size: 20px;
+}
+.texto {
+    color: #5A6364;
+    font-weight: 550;
+    margin-top: 10px;
+    text-align: justify;
+    font-size: 18px;
+    margin-left: 15px;
+    margin-right: 15px; 
+}
+.botao {
+    color: #005351;
+    margin-top: 17px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 17px;
+    text-decoration: none; 
+}
+
+.faleconosco{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente */
+}
+.faleconosco h3{
+    color: #231F20
+}
+.linha {
+    position: relative;
+    max-width:800px;    
+    width: 100%;
+    height: 2px;      
+    background-color: #C4C5C8;
+    margin: 20px 0;
+    margin-left: 45px;
+}
+.form-linha1 {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center; 
+    gap: 30px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    width: 40%; /* Largura para os campos "Nome" e "E-mail" */
+}
+
+.input-group label {
+    font-size: 16px;
+    color: #414D4D;
+    margin-bottom: 5px;
+    font-weight: 600;
+    
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #C4C5C8;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #F8F8F8;
+    outline: none;
+    transition: border-color 0.3s ease;
+    
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #005351;
+    
+}
+
+textarea {
+    resize: none;
+    text-align: left; 
+    
+}
+
+.input-group-textarea {
+    display: flex;
+    flex-direction: column;
+    width: 83%; 
+    margin: 0 auto; 
+    margin-top: 20px;
+    font-weight: 600;
+    color: #414D4D;
+}
+
+#message {
+    width: 100%; 
+    height: 45px; 
+    padding: 10px;
+    border: 1px solid #C4C5C8;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #F8F8F8;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+button {
+    width: 20%;
+    font-family: "Nunito";
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #005351;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    float: right;
+    margin-right: 90px;
+    font-family: "Nunito-regular";
+}
+
+button:hover {
+    background-color: #00403F;
+}
+
+button:active {
+    background-color: #00302F;
+}
+
+/* FAQ */
+.title {
+    margin-top: 100px;
+    font-size: 25px;
+    display: flex;
+    margin-left: 36px;
+    border-bottom: 2px solid #C4C5C8;
+    padding-bottom: 13px; 
+    width: 88%; 
+  
+}
+.questions-container {
+    max-width: 1030px;
+    margin: 0 auto; 
+    padding: 0 10px; 
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+}
+.question button {
+    width: 100%; 
+    background-color: #F5F5F5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    outline: none;
+    font-size: 22px;
+    color: #464646;
+    font-weight: 700;
+    cursor: pointer;
+    border-bottom: 2px solid #C4C5C8;
+    margin: 10px 0; 
+}
+
+.question p {
+    font-size: 22px;
+    max-height: 0;
+    opacity: 0;
+    line-height: 1.5;
+    overflow: hidden;
+    
+}
+
+.d-arrow {
+    transition: transform 0.5s ease-in;
+    color: #fff;
+}
+
+.question p.show {
+    max-height: 100%; 
+    opacity: 1;
+    padding: 0px 15px 30px 15px;
+}
+
+.question button .d-arrow.rotate {
+    transform: rotate(180deg);
+}
+
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .container-cards{
+        margin-top: 10px;
+    }
+    .search {
+        width: 90%;
+    }
+
+    .container-cards {
+        flex-wrap: wrap;
+    }
+
+    .card {
+        width: 250px;
+        margin-left: 70px;
+        margin-top: 20px;
+    }
+    .card-img{
+        width: 100%;
+    }
+    .lupa {
+        margin-bottom: 70px;
+        margin-left: 5px;
+    }
+    button {
+        float: right;
+        margin-right: 48px;
+        
+    }
+    
+}
+
+@media (max-width: 768px) {
+    .container-cards{
+        margin-top: 10px;
+    }
+    .card-img{
+        width: 100%;
+    }
+    .search {
+        width: 90%;
+    }
+
+    .form-linha1 {
+        flex-direction: column;
+    }
+
+    .input-group {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .card {
+        width: 300px;
+        margin: 10px;
+    }
+    
+    button {
+        font-size: 14px; 
+        padding: 10px; 
+        width: auto; 
+        margin-top: 20px;
+        margin-left: auto; 
+        margin-right: 0; 
+        display: block;
+    }
+    /* Aumenta a largura do textarea */
+    .input-group-textarea {
+        width: 100%; 
+        margin-top: 20px; 
+    }
+
+    #message {
+        width: 100%;
+        height: 80px; 
+        padding: 10px; 
+        border: 1px solid #C4C5C8;
+        border-radius: 5px; 
+        font-size: 16px; 
+        background-color: #F8F8F8; 
+        outline: none;
+        transition: border-color 0.3s ease; 
+    }
+}
+
+@media (max-width: 480px) {
+    .search {
+        padding: 10px;
+    }
+    .lupa {
+        margin-bottom: 70px;
+        margin-left: 5px;
+    }
+
+    .titulo-card {
+        font-size: 18px;
+    }
+
+    .texto {
+        font-size: 16px;
+    }
+
+}

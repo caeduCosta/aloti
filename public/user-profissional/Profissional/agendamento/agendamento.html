@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="css/styleAgendamento.css">
+    <link rel="stylesheet" href="../css/styleFooter.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="shortcut icon" href="img/menuTop.png" type="image/x-icon">
+    <title>Agendamentos</title>
+</head>
+<body>
+
+     <!-- Menu -->
+<div class="sidebar">
+  <div class="top">
+    <div class="logo">
+      <img src="./img/Vector.svg" alt="logo" class="imagem-logo">
+    </div>
+    <i class="bx bx-chevron-right toggle" id="btn"></i>
+  </div>
+
+   <!-- Imagem que será exibida no modo responsivo -->
+   <img src="img/menuTop.png" alt="Imagem Responsiva" class="imagem-responsiva">
+    <!-- Linha centralizada -->
+  <div class="linha-centralizada"></div>
+  
+  <a href="../perfil-idoso/perfil-idoso/perfil-idoso.html" style="text-decoration: none;"><div class="user" title="Membro Aloti">
+    <img src="img/vera2.png" class="user-img">
+    <div class="nome-user">
+      <span class="text nav-text">
+        <h4 class="usuario">Vera Fernandes</h4>
+      </span>
+      <span class="text nav-text">
+        <p class="membro">Membro Aloti</p>
+      </span>
+    </div>
+  </div></a>
+  <ul>
+    <h4 class="categoria-menu">EXPLORAR</h4>
+    <li>
+      <a href="../home/index.html" title="Página inicial">
+        <i class="bx bx-home-alt"></i>
+        <span class="nav-item">Página inicial</span>
+      </a>
+    </li>
+    <li>
+      <a href="../pesquisar-profissionais/procurar-prof.html" title="Profissionais">
+        <i class="bx bx-donate-heart icons"></i>
+        <span class="nav-item">Encontrar profissionais</span>
+      </a>
+    </li>
+    <li>
+      <a href="agendamento.html" title="Agendamentos">
+        <i class="bx bx-calendar-alt icons"></i>
+        <span class="nav-item">Agendamentos</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" title="Pagamentos">
+        <i class="bx bx-wallet"></i>
+        <span class="nav-item">Pagamentos</span>
+      </a>
+    </li>
+    <li>
+      <a href="../notificação/notifica.html" title="Notificações">
+        <i class='bx bx-bell'></i>
+        <span class="nav-item">Notificações</span>
+      </a>
+    </li>
+    <li>
+      <a href="../pesquisar-profissionais/Favoritos.html" title="Favoritos">
+        <i class='bx bx-heart'></i>
+        <span class="nav-item">Favoritos</span>
+      </a>
+    </li>
+    <br>
+    <h4 class="categoria-menu">CONFIGURAÇÕES</h4>
+    <li>
+      <a href="#" title="Configurações">
+        <i class="bx bx-cog"></i>
+        <span class="nav-item">Configurações</span>
+      </a>
+    </li>
+    <li>
+      <a href="../suporte/ajudaSuporte.html" title="Ajuda e suporte">
+        <i class="bx bx-support"></i>
+        <span class="nav-item">Ajuda e suporte</span>
+      </a>
+    </li>
+    <li>
+      <a href="../sobreNos/sobreNos.html" title="Sobre nós">
+        <i class="bx bx-question-mark"></i>
+        <span class="nav-item">Sobre nós</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" title="Sair">
+        <i class="bx bx-log-out"></i>
+        <span class="nav-item">Sair</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<!-- Menu -->
+  <div class="main-content" style="padding: 0;">
+
+        <div class="title2">
+          <h1>Agendamentos</h1>
+        </div>
+        <img src="img/agendamentoprofissional.svg" class="imgAgendamento" alt="">  
+
+        <div class="calendario">
+            <div class="imgCalendario">
+                <img src="img/calendario2.svg" alt="">
+            </div>
+           <a href="" style="text-decoration: none;"> <div class="textoCalendario">
+                <p>Histórico</p>
+            </div></a>
+        </div>
+
+        <h2>Recentes</h2>
+        <h3 class="ultima">Última semana</h3>
+      
+        <div class="pai" style="margin-left: 15px;">
+          <div class="filho1">
+           <a href="AgendamentoSelecionado.html" style="text-decoration: none; color: black;" > <div class="cardProfissional">
+              <div class="img-card">
+                  <img src="img/Vera Lúcia.png" alt="">
+              </div>
+              <div class="content">
+                  <div class="title">
+                      <h3>Vera Lúcia</h3>
+                  </div>
+                  <div class="text">
+                      <p><img src="img/calendario.svg" alt="" class="iconCard">2 Abr - 4 Abr, 2024</p>
+                  
+                  
+                      <p><img src="img/relogio.svg" alt="" class="iconCard">8h - 18h</p>
+                  </div>
+                  
+                      <!-- <button class="btn-container">Mensagem</button> -->
+                      <div class="ativo">
+                        <i class='bx bxs-circle' style='color:#088749 ; text-decoration: none; '  ></i>Ativo
+                    </div>
+                  
+              </div>
+          </div></a>
+
+          <a href="AgendamentoSelecionado.html" style="text-decoration: none; color: black;" > 
+          <div class="cardProfissional">
+            <div class="img-card">
+                <img src="img/Edson Santos.png" alt="">
+            </div>
+            <div class="content">
+                <div class="title">
+                    <h3>Edson Santos</h3>
+                    
+                </div>
+                <div class="text">
+                    <p><img src="img/calendario.svg" alt="" class="iconCard">10 Abr - 15 Abr, 2024</p>
+                
+                
+                    <p><img src="img/relogio.svg" alt="" class="iconCard">12h - 16h</p>
+                </div>
+                
+                    <!-- <button class="btn-container">Mensagem</button> -->
+                    <div class="ativo">
+                      <i class='bx bxs-circle' style='color:#088749 ; text-decoration: none;'  ></i>Ativo
+                  </div>
+                
+            </div>
+        </div></a>
+
+          </div>
+
+
+          </div>
+
+          <h3 class="ultima">Última mês</h3>
+
+          <div class="pai" style="margin-left: 15px;">
+            <div class="filho1">
+             <a href="AgendamentoSelecionado.html" style="text-decoration: none; color: black;" > <div class="cardProfissional">
+                <div class="img-card">
+                    <img src="img/Marcos Lima.png" alt="">
+                </div>
+                <div class="content">
+                    <div class="title">
+                        <h3>Marcos Lima</h3>
+                    </div>
+                    <div class="text">
+                        <p><img src="img/calendario.svg" alt="" class="iconCard">2 Abr - 4 Abr, 2024</p>
+                    
+                    
+                        <p><img src="img/relogio.svg" alt="" class="iconCard">8h - 18h</p>
+                    </div>
+                    
+                        <!-- <button class="btn-container">Mensagem</button> -->
+                        <div class="ativo">
+                          <i class='bx bxs-circle' style='color:#088749; text-decoration: none;'  ></i>Ativo
+                      </div>
+                    
+                </div>
+            </div></a>
+  
+            <a href="AgendamentoSelecionado.html" style="text-decoration: none; color: black;" > 
+            <div class="cardProfissional">
+              <div class="img-card">
+                <img src="img/João Carlos.png" alt="">
+            </div>
+            <div class="content">
+                <div class="title">
+                    <h3>João Carlos</h3>
+              
+                </div>
+                <div class="text">
+                    <p><img src="img/calendario.svg" alt="" class="iconCard">10 Abr - 15 Abr, 2024</p>
+                
+                
+                    <p><img src="img/relogio.svg" alt="" class="iconCard">12h - 16h</p>
+                </div>
+                  
+                      <!-- <button class="btn-container">Mensagem</button> -->
+                      <div class="ativo">
+                        <i class='bx bxs-circle' style='color:#088749; text-decoration: none;'  ></i>Ativo
+                    </div>
+                  
+              </div>
+          </div></a>
+  
+            </div>
+  
+            </div>
+
+
+
+
+         
+
+
+      
+
+    <footer class="footer" style="margin-right: -10px;">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                 <img class="logoFooter" src="img/Vector.png" alt="">
+ 
+                    <ul>
+                        <li><a href="#">© 2024, Aloti - All rights deserved.</a></li>
+                        <li><a href="#">aloti.etec@gmail.com</a></li>
+                    </ul>
+                </div>
+ 
+             
+                <div class="footer-col">
+                 
+                  <ul>
+                    <li><a href="../home/index.html">PÁGINA INICIAL</a></li>
+                    <li><a href="../pesquisar-profissionais/procurar-prof.html">ENCONTRAR PROFISSIONAIS</a></li>
+                    <li><a href="agendamento.html">AGENDAMENTOS</a></li>
+                    <li><a href="#">PAGAMENTO</a></li>
+                    <li><a href="../notificação/notifica.html">NOTIFICAÇÕES</a></li>
+                 <li><a href="../pesquisar-profissionais/Favoritos.html">FAVORITOS</a></li>
+                 <li><a href="../sobreNos/sobreNos.html">SOBRE NÓS</a></li>
+                </ul>
+                </div> 
+                <div class="footer-col">
+                    <ul>
+                     <p class="imgFooter"> <img src="img/iii.svg" alt=""> <a href="../configuracoes/termos.html" >Termos de privacidade</a></p>
+                     <p class="imgFooter"> <img src="img/config.svg" alt=""><a href="#" >Configurações</a></p>
+                     <p class="imgFooter"> <img src="img/fone.svg" alt="" ><a href="../suporte/ajudaSuporte.html" >Ajuda e suporte</a></p>
+ 
+ 
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </footer>
+</div></div> 
+   <script src="../js/sidebar.js"></script>
+</body>
+</html>

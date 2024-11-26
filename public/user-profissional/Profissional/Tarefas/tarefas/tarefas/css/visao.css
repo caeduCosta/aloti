@@ -1,0 +1,417 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+body {
+    font-family: "Nunito";
+    background-color: #F5F5F5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 20px;  
+    max-width: 100%; /* Garante que a largura da container seja ajustável */
+    box-sizing: border-box;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 13px;
+}
+
+.tarefas, .estatisticas, .bate-papo {
+    display: flex;
+    width: 100%; 
+    max-width: 200px;
+    height: 48px;
+    background-color: #34A087; 
+    border-radius: 22px;
+    align-items: center;
+    justify-content: center;
+}
+
+.estatisticas a{
+    text-decoration: none; 
+    color: white;
+}
+.tarefas a{
+    text-decoration: none; 
+    color: white;
+}
+.estatisticas {
+    background-color: #DB7495; 
+}
+
+.img-buttons {
+    width: 23px;
+    height: 30px;    
+}
+
+.buttons p {
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+.img-carrossel {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+}
+.text-atividade {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 60px;
+    margin-top: 8px;
+    font-weight: 400;
+}
+
+.estado-atividades  a{
+    text-decoration: none; 
+}
+.estado-atividades {
+    margin-top: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative; 
+    justify-content: center;
+    flex-wrap: nowrap; /* Garante que os botões não quebrem para a linha seguinte */
+}
+
+.fazer, .concluida , .fazer2 , .concluida2 {
+    position: relative; 
+    height: 44px;
+    width: 100%; 
+    max-width: 390px; 
+    border-radius: 32px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    
+}
+
+.fazer {
+    background-color: #34A087; 
+    z-index: 2;   /*Quem fica por cima e por baixo*/
+
+}
+
+.concluida {
+    background-color: #C4C5C8; 
+    margin-left: -50px;        
+    z-index: 1;              
+}
+
+.fazer2{
+    background-color: #C4C5C8; 
+    z-index: 1;
+}
+
+.concluida2{
+    background-color: #34A087; 
+    margin-left: -50px;   
+    z-index: 2;
+}
+.add-tarefa {
+    width: 280px;
+    height: 42px;
+    border-radius: 12px;
+    display: flex;
+    background-color:#DB7495;
+    color: white;
+    margin-top: 50px;
+}
+
+.add-tarefa p {
+    font-size: 19px;
+    font-weight: 600;
+    margin-top: 9px;
+    margin-left: 14px;
+}
+.add-tarefa a{
+    text-decoration: none; 
+    color: white;
+}
+.add-tarefa img {
+    width: 21px;
+    height: 21px;
+    margin-left: 26px;
+    margin-top: 10px;
+}
+
+.container-tarefas {
+    margin-top: 30px;
+}
+
+.fazer-tarefas {
+    display: flex;
+}
+
+.horario {
+    color: #6D7578;
+    text-align: center; 
+    display: flex;    
+    justify-content: center; 
+    align-items: center;  
+}
+
+
+
+@media (max-width: 430px) {
+    .tarefas .img-buttons {
+        margin-left: 5px;
+    }
+    .estatisticas .img-buttons {
+        margin-left: 10px; 
+    }
+
+    .button-editar, .button-editar2{
+        width: 17px;
+        right: 27px;
+        top: 22px;
+    }
+    .subtitulo , .subtitulo2{
+        margin-top: 3px;
+        clear: both;
+    }
+}
+
+@media (max-width: 368px) {
+    .button-editar, .button-editar2{
+        right: 20px;
+        top: 22px;
+    }
+}
+
+@media (max-width: 360px) {
+    .button-editar, .button-editar2{
+        right: 13px;
+    }
+
+    .card-tarefa2 {
+        min-height: 86px; 
+        height: auto; 
+    }
+}
+
+@media (max-width: 344px) {
+    .tarefas {
+        margin-left: 20px;
+    }
+    .estado-atividades p {
+        font-size: 13px;
+        margin-left: 20px;
+    }
+    .titulo, .titulo2{
+        margin-top: 3px;
+        font-size: 13px;
+        margin-left: 10px;
+    }
+    .subtitulo , .subtitulo2{
+        margin-left: 10px;
+    }
+    .button-editar , .button-editar2{
+        width: 15px;
+        
+    }
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebra de linha em telas menores */
+    justify-content: center; /* Centraliza os botões horizontalmente */
+}
+
+.icon-button {
+    background-color: #34A087;
+    color: white;
+    border: none;
+    padding: 10px 50px; /* Tamanho fixo do botão */
+    border-radius: 5px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    min-width: 100px; /* Tamanho mínimo dos botões */
+    text-align: center;
+    margin: 0 30px 30px 0; /* Aumentado o espaçamento entre os botões */
+    border-radius: 50px;
+}
+
+.icon-button .icon {
+    margin-right: 6px; /* Espaço entre o ícone e o texto */
+    font-size: 18px;
+}
+
+.icon-button:hover {
+    background-color: #2a806e; /* Efeito de hover */
+}
+
+/* Ajusta para telas menores */
+@media (max-width: 600px) {
+    .icon-button {
+        font-size: 14px;
+        padding: 8px 10px; /* Tamanho fixo em telas menores */
+    }
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+    justify-items: center; /* Centraliza os cards no container */
+}
+
+.card {
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    width: 250px;
+    height: 100px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 30px;
+    height: 30px;
+    margin-right: 15px;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.card-percentage {
+    font-size: 16px;
+    color: #34A087;
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .card-container {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+}
+
+
+
+.content-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1200px;
+    border-left: 3px solid #FF9BB1; /* Linha rosa */
+}
+
+.left-side {
+    width: 30%; /* Lado esquerdo menor */
+    padding: 20px;
+    background-color: #fff;
+}
+
+.separator {
+    width: 3px;
+    background-color: #FF9BB1; /* Linha rosa entre as seções */
+}
+
+.right-side {
+    width: 70%; /* Lado direito maior */
+    padding: 20px;
+    background-color: #fff;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.hours {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.hours li {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.card {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+.card img {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.card-description {
+    font-size: 16px;
+    color: #34A087;
+}
+
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .separator {
+        width: 100%;
+        height: 3px;
+    }
+
+    .left-side, .right-side {
+        width: 100%;
+    }
+}

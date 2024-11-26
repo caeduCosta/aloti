@@ -1,0 +1,539 @@
+@font-face {
+  font-family: "Nunito-regular";
+  src: url(../../font/Nunito-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Nunito-semibold";
+  src: url(../../font/Nunito-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: "Nunito-bold";
+  src: url(../../font/Nunito-Bold.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.textoSobreNos{
+  color: #fff;
+  font-family: "Nunito-bold";
+ 
+}
+
+.textoSobreNos2{
+  color: #fff;
+  text-align: center;
+  padding-top: 20px;
+
+}
+.centerImgMembros {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Para ocupar a largura total disponível */
+}
+
+.membro1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza a imagem e o texto no eixo horizontal */
+  text-align: center; /* Centraliza o texto */
+  gap: 10px; /* Espaçamento entre a imagem e o nome */
+}
+
+.imgMembro {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50px 50px 50px 0;
+  background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.nomeMembro{
+  color: #34A087;
+}
+
+.linkedin img{
+  width: 25px;
+}
+
+.membros{
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+
+.fundo-funcionalidades{
+  background-color:#34A087 ;
+  
+  padding-top: 40px
+}
+
+
+/* .sobreNos{
+  background-image: url(../img/Group\ 912.svg);
+  height: 400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 80px;
+  margin-right: -10px;
+ 
+} */
+
+.sobreNos {
+  background-image: url(../img/Group\ 912.svg);
+  height: 400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-top: 80px;
+  margin-right: -10px;
+}
+
+
+
+
+
+
+h1 {
+  font-family: "Nunito-bold";
+  color: #005351;
+  text-align: center;
+  font-size: 42px;
+}
+
+/*Cards*/
+
+.container_card {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Card */
+.card {
+  width: 370px;
+  height: 350px;
+  margin: 20px;
+  background-color: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px rgba(210, 210, 210, 0.301);
+  transition: 0.3s;
+}
+
+/* Card Header*/
+.card-header {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.card-img {
+  min-width: 100%;
+  width: auto;
+  height: 100%;
+}
+
+/* Card Body */
+.card-body {
+  height: 170px;
+  padding: 15px;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.card-titulo {
+  font-size: 22px;
+  margin: 15px 0;
+  color: #34a087;
+}
+
+.card-texto {
+  font-size: 12px;
+  width: 250px;
+  margin: 0 auto;
+}
+
+/* Card Footer */
+.card-footer {
+  margin-top: 10px;
+  text-align: center;
+  background-color: #000;
+}
+
+.card-footer a {
+  color: #fff;
+  display: block;
+  padding: 16px;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-weight: 600;
+}
+
+/* Animação Hover */
+.card:hover {
+  transform: scale3d(1.1, 1.1, 1);
+}
+
+/* Hidden Class for Cards */
+.hidden {
+  display: none;
+}
+
+
+/* contato aqui */
+
+.fundo-contato {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  margin: 35px 0;
+}
+
+.texto-contato {
+
+  width: 70%;
+  text-align: justify;
+  margin-left: 4.8em;
+}
+
+
+.lado-esquerdo {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+#titulo-contato {
+  font-family: "Nunito-bold";
+  color: #005351;
+  font-size: 42px;
+  text-align: left;
+  margin: 10px 0 35px 75px;
+}
+
+.grupo-redes {
+  display: flex;
+  flex-direction: row;
+  margin: 15px 0px;
+}
+
+.grupo-redes-email,
+.grupo-redes-sac {
+  display: flex;
+  flex-direction: row;
+  margin: 15px 55px;
+}
+
+.grupo-redes-sac img {
+  margin-bottom: 23px;
+}
+
+.usuario {
+  color: #fff;
+}
+
+.texto-redes {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+}
+
+.lado-esquerdo img {
+  width: 35px;
+}
+
+.lado-direito {
+
+  margin: 0 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.formulario {
+  background-color: #fff;
+  width: 450px;
+  height: 75%;
+  border-radius: 15px;
+  padding: 35px;
+}
+
+.titulo-formulario {
+  color: #ff9bb1;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.campo-forms {
+  display: flex;
+  flex-direction: column;
+  margin: 35px 0;
+}
+
+#email,
+#confirmar-email {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+#termos {
+  border-radius: 15%;
+}
+
+.botao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.btn-inscrever {
+  background-color: #005351;
+  color: #fff;
+  width: 250px;
+  height: 35px;
+  border: none;
+  border-radius: 15px;
+  padding: 5px;
+}
+
+.btn-inscrever:hover {
+  background-color: #34a087; /* Cor mais escura no hover */
+
+}
+
+/*Funcionalidades*/
+
+/* Container de cards */
+.custom-container-card {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  
+}
+
+/* Card */
+.custom-card {
+  width: 250px;
+  margin: 20px;
+  background-color: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px rgba(210, 210, 210, 0.301);
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Header do card */
+.custom-card-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Imagem do card */
+.custom-card-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Corpo do card */
+.custom-card-body {
+  padding: 15px;
+}
+
+/* Título do card */
+.custom-card-titulo {
+  font-size: 22px;
+  margin: 15px 0;
+  color: #34a087;
+  font-family: "Nunito-bold";
+}
+
+.estrela {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Texto do card */
+.custom-card-texto {
+  font-size: 14px;
+  
+  margin: 0 auto;
+  font-family: "Nunito-regular";
+  
+}
+
+/* Animação Hover */
+.custom-card:hover {
+  transform: scale3d(1.1, 1.1, 1);
+}
+
+
+
+/*Sobre*/
+
+.titulo-sobre {
+  margin-top: 45px;
+}
+
+.sobre {
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+  margin: 45px 45px 55px 45px;
+}
+
+.sobre-esquerda {
+  width: 60%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.textos-sobre {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  text-align: justify;
+  font-family: "Nunito-regular";
+
+}
+
+#lottie {
+  width: 50%;
+  right: 0em;
+  top: 12.5em;
+}
+
+#lottie2 {
+  /* width: 50%; */
+  right: 0em;
+  top: 12.5em;
+}
+
+.imgInsta{
+  width: 40%; 
+  margin-right: 0;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%; /* O sidebar ocupa toda a largura da tela */
+    position: relative; /* Posiciona o sidebar de forma relativa */
+  }
+
+  .main-content {
+    padding: 20px; /* Adiciona algum padding */
+    width: 100%; /* Garante que o conteúdo principal ocupa toda a largura */
+  }
+
+  .custom-container-card {
+    display: flex;
+    flex-direction: column; /* Alinha os cards verticalmente */
+    align-items: center; /* Centraliza os cards */
+  }
+
+  .custom-card {
+    width: 90%; /* Limita a largura dos cards */
+    margin: 10px 0; /* Adiciona margem entre os cards */
+  }
+
+  .membros {
+    flex-direction: column; /* Alinha os membros verticalmente */
+    align-items: center; /* Centraliza os membros */
+  }
+
+  .lado-esquerdo, .lado-direito {
+    text-align: center; /* Centraliza o texto */
+    width: 100%; /* Garante que ambos os lados ocupem toda a largura */
+  }
+
+  #lottie {
+    width: 100%; /* Ajusta a largura da imagem */
+    margin: 0 auto; /* Centraliza a imagem */
+    height: 100%;
+  }
+
+  #lottie2 {
+    width: 100%; /* Ajusta a largura da imagem */
+    margin: 0 auto; /* Centraliza a imagem */
+    height: 100%;
+  }
+  .fundo-contato{
+    flex-wrap: wrap;
+  }
+
+  .imgInsta{
+    width: 100%;
+  }
+
+  
+  
+}
+
+/* Ajustes em telas pequenas */
+@media (max-width: 480px) {
+  .imgMembro {
+    width: 80px; /* Ajusta a largura da imagem do membro */
+    height: 80px; /* Ajusta a altura da imagem do membro */
+  }
+
+  .textoSobreNos2 {
+    font-size: 16px; /* Ajusta o tamanho da fonte para telas menores */
+  }
+}
+
+@media (max-width: 980px) {
+  #lottie {
+    
+    width: 80%; /* Ajusta a largura da imagem */
+    margin: 0 auto; /* Centraliza a imagem */
+    height: 100%;
+  }
+  #lottie2 {
+    width: 100%; /* Ajusta a largura da imagem */
+    margin: 0 auto; /* Centraliza a imagem */
+    height: 100%;
+  }
+  .fundo-contato{
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 900px) {
+  #lottie {
+    width: 80%; /* Ajusta a largura da imagem */
+    margin: 0 auto; /* Centraliza a imagem */
+    height: 100%;
+  }
+  #lotti2 {
+    width: 100%; /* Ajusta a largura da imagem */
+    margin: 0 auto; /* Centraliza a imagem */
+    height: 100%;
+  }
+
+}

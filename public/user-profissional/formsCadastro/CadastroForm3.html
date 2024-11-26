@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro3</title>
+    <!-- Inclua o Font Awesome para usar os ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/CadastroForm3.css">
+    <link rel="shortcut icon" href="img/menuTop.png" type="image/x-icon">
+    <script>
+        // Função para mostrar/ocultar elementos com base no botão clicado
+        function toggleDisplay(option) {
+            var fileOption = document.getElementById('fileOption');
+            var linkOption = document.getElementById('linkOption');
+
+            if (option === 'file') {
+                fileOption.style.display = 'block';
+                linkOption.style.display = 'none';
+            } else if (option === 'link') {
+                fileOption.style.display = 'none';
+                linkOption.style.display = 'block';
+            }
+        }
+
+        // Função para mostrar o nome do arquivo e adicionar a opção de remover
+        function updateFileName() {
+            var input = document.getElementById('input_file');
+            var fileName = document.getElementById('file-name');
+            var removeButton = document.getElementById('remove-file');
+
+            // Mostrar o nome do arquivo
+            if (input.files.length > 0) {
+                fileName.textContent = input.files[0].name;
+                removeButton.style.display = 'inline'; // Mostrar o botão de remoção
+            } else {
+                fileName.textContent = '';
+                removeButton.style.display = 'none'; // Ocultar o botão de remoção
+            }
+        }
+
+        // Função para remover o arquivo selecionado
+        function removeFile() {
+            var input = document.getElementById('input_file');
+            var fileName = document.getElementById('file-name');
+            var removeButton = document.getElementById('remove-file');
+
+            // Resetar o input de arquivo
+            input.value = '';
+            fileName.textContent = '';
+            removeButton.style.display = 'none'; // Ocultar o botão de remoção
+        }
+
+        // Função para validar os campos obrigatórios
+        function validateForm() {
+            const areaAtuacao = document.getElementById('areaAtuacao').value;
+            const registroProfissional = document.getElementById('registroProfissional').value;
+            const instituicaoFormacao = document.getElementById('instituicaoFormacao').value;
+            const anoFormacao = document.getElementById('anoFormacao').value;
+            const linkComprovacao = document.getElementById('linkComprovacao').value;
+            const file = document.getElementById('input_file').files[0];
+
+            if (!areaAtuacao) {
+                alert("Por favor, selecione a área de atuação.");
+                return false;
+            }
+            if (!registroProfissional) {
+                alert("Por favor, insira o número de registro profissional.");
+                return false;
+            }
+            if (!instituicaoFormacao) {
+                alert("Por favor, insira a instituição de formação.");
+                return false;
+            }
+            if (!anoFormacao) {
+                alert("Por favor, insira o ano de formação.");
+                return false;
+            }
+            // Verifica se pelo menos um dos métodos de comprovação está preenchido
+            if (!linkComprovacao && !file) {
+                alert("Por favor, anexe um arquivo ou insira um link de comprovação.");
+                return false;
+            }
+            return true; // Todos os campos estão válidos
+        }
+    </script>
+</head>
+<body>
+    <a href="CadastroForm2.html"><img class="seta" src="img/seta.svg" alt=""></a>
+    <h1>Cadastro</h1>
+    <div class="container">
+        <div class="progress-bar">
+            <div class="step"><div class="bullet" id="bullet1"></div></div>
+            <div class="step"><div class="bullet" id="bullet2"></div></div>
+            <div class="step"><div class="bullet" id="bullet3"></div></div>
+            <div class="step"><div class="bullet" id="bullet4"></div></div>
+            <div class="step"><div class="bullet" id="bullet5"></div></div>
+            <div class="step"><div class="bullet" id="bullet6"></div></div>
+            <div class="step"><div class="bullet" id="bullet7"></div></div>
+            <div class="step"><div class="bullet" id="bullet8"></div></div>
+        </div>
+    </div>
+    <p class="pessoais">Informações profissionais</p>
+    <div class="content">
+        <div class="content1">
+            <label for="">Área de atuação</label>
+            <select id="areaAtuacao" required>
+                <option value="" selected disabled>Selecionar</option>
+                <option value="cuidador-geral">Cuidador Geral</option>
+                <option value="cuidador-ocupacional">Cuidador Ocupacional</option>
+                <option value="cozinheiro">Cozinheiro</option>
+                <option value="enfermeiro">Enfermeiro</option>
+                <option value="fisioterapeuta">Fisioterapeuta</option>
+                <option value="psicologo">Psicólogo</option>
+            </select>
+            <label for="">Número de registro profissional</label>
+            <input type="text" id="registroProfissional" placeholder="ex: CRM, COREN, CRP" required>
+            <label for="">Instituição de formação</label>
+            <input type="text" id="instituicaoFormacao" placeholder="Digite o nome da instituição que conferiu sua habilitação profissional" required>
+            <label for="">Ano de formação</label>
+            <input type="date" id="anoFormacao" required>
+        </div>
+
+        <div class="content2">
+            <label for="">Preço do serviço por hora</label>
+            <input type="text" id="precoHora" placeholder="ex: R$ 75,00/hora" required>
+
+            <label for="">Comprovação de formação</label>
+            <div class="btn">
+                <button id="btn-style" id="btn-file" type="button" onclick="toggleDisplay('file')">Arquivo</button>
+                <button id="btn-style" id="btn-link" type="button" onclick="toggleDisplay('link')">Link</button>
+            </div>
+            <!-- Seção para upload de arquivo -->
+            <div id="fileOption" style="display: none;">
+                <p>Por favor, anexe um documento comprobatório  <br> 
+                de sua formação. O arquivo deve estar em um dos <br> 
+                seguintes formatos: PDF, JPG, PNG ou DOCX, e deve ter <br>
+                entre 50 KB e 10 MB.</p>
+                <label class="labelFile" for='input_file' style="cursor: pointer;">Selecionar um arquivo<i class="fas fa-folder" style="margin-left: 5px;"></i></label>
+                <input id='input_file' type='file' onchange="updateFileName()" />
+                <span id='file-name'></span>
+                <!-- Botão de remoção com ícone de lixo -->
+                <button type='button' id='remove-file' onclick="removeFile()" style="display:none;">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </div>
+            <!-- Seção para inserção de link -->
+            <div id="linkOption" style="display: none;">
+                <div>
+                    <p>Por favor, insira o link da credencial, registro profissional <br>
+                    ou do verificador oficial da sua formação para validar<br>
+                    sua autenticidade.</p>
+                </div>
+                <input type="text" id="linkComprovacao" placeholder="Ex: https://examplo.com/registro-profissional">
+            </div>
+        </div>
+    </div>
+  
+    <div class="button-wrapper">
+        <button type="submit" id="submit">Próximo</button>
+    </div>   
+
+    <script>
+        document.getElementById('submit').addEventListener('click', function(e) {
+            e.preventDefault(); // Evita o envio padrão do formulário
+
+            if (validateForm()) { // Verifica se o formulário é válido
+                // Pega os valores do formulário
+                const areaAtuacao = document.getElementById('areaAtuacao').value;
+                const registroProfissional = document.getElementById('registroProfissional').value;
+                const instituicaoFormacao = document.getElementById('instituicaoFormacao').value;
+                const anoFormacao = document.getElementById('anoFormacao').value;
+                const precoHora = document.getElementById('precoHora').value;
+                const linkComprovacao = document.getElementById('linkComprovacao').value;
+                const file = document.getElementById('input_file').files[0];
+
+                // Armazenar os dados no localStorage
+                localStorage.setItem('areaAtuacao', areaAtuacao);
+                localStorage.setItem('registroProfissional', registroProfissional);
+                localStorage.setItem('instituicaoFormacao', instituicaoFormacao);
+                localStorage.setItem('anoFormacao', anoFormacao);
+                localStorage.setItem('precoHora', precoHora);
+                
+                // Se um arquivo foi selecionado, armazene-o em localStorage
+                if (file) {
+                    localStorage.setItem('fileComprovacao', file.name); // Armazene apenas o nome do arquivo
+                } else {
+                    localStorage.setItem('fileComprovacao', '');
+                }
+                
+                // Se um link foi inserido, armazene-o em localStorage
+                localStorage.setItem('linkComprovacao', linkComprovacao);
+                
+                // Redirecionar para o próximo formulário
+                window.location.href = 'CadastroForm4.html';
+            }
+        });
+    </script>
+</body>
+</html>

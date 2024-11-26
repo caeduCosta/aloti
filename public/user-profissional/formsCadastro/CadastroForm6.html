@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro6</title>
+    <link rel="stylesheet" href="css/CadastroForm7.css">
+    <link rel="shortcut icon" href="img/menuTop.png" type="image/x-icon">
+</head>
+<body>
+    <a href="CadastroForm4.html"><img class="seta" src="img/seta.svg" alt="seta"></a>
+    <h1>Cadastro</h1>
+    <div class="container">
+        <div class="progress-bar">
+            <div class="step">
+                <div class="bullet" id="bullet1"></div>
+            </div>
+            <div class="step">
+                <div class="bullet" id="bullet2"></div>
+            </div>
+            <div class="step">
+                <div class="bullet" id="bullet3"></div>
+            </div>
+            <div class="step">
+                <div class="bullet" id="bullet4"></div>
+            </div>
+            <div class="step">
+                <div class="bullet" id="bullet5"></div>
+            </div>
+            <div class="step">
+                <div class="bullet" id="bullet6"></div>
+            </div>
+            <div class="step">
+                <div class="bullet" id="bullet7"></div>
+            </div>
+            <div class="step">
+                <div class="bullet" id="bullet8"></div>
+            </div>
+        </div>
+    </div>
+    <p class="pessoais">Disponibilidade</p>
+    <div style="text-align: center;">
+        <p>Selecione os dias e horários em que você está disponível para prestar os serviços. 
+        Ou você também pode especificar diferentes <br>horários para cada dia da semana.</p>
+    </div>
+    <div class="content">
+        <div class="content1">
+            <label for="" class="horario">Selecione os dias disponíveis</label>
+            <label for=""><input type="checkbox" id="segunda">Segunda-feira</label>
+            <label for=""><input type="checkbox" id="terca">Terça-feira</label>
+            <label for=""><input type="checkbox" id="quarta">Quarta-feira</label>
+            <label for=""><input type="checkbox" id="quinta">Quinta-feira</label>
+            <label for=""><input type="checkbox" id="sexta">Sexta-feira</label>
+            <label for=""><input type="checkbox" id="sabado">Sábado</label>
+            <label for=""><input type="checkbox" id="domingo">Domingo</label>
+  
+            <label for="" class="horario">Selecione o(s) horário(s) de disponibilidade</label>
+            <label for=""><input type="checkbox" id="manha">Manhã (08:00 - 12:00)</label>
+            <label for=""><input type="checkbox" id="tarde">Tarde (12:00 - 18:00)</label>
+            <label for=""><input type="checkbox" id="noite">Noite (18:00 - 22:00)</label>
+        </div>
+
+        <div class="content2">
+            <label for="" class="horario">Disponibilidade customizada</label>
+            <label for=""> <input type="checkbox" id="segundaCustom">Segunda-feira</label>
+            <input type="time" id="segundaInicio"><span> até </span><input type="time" id="segundaFim">
+            <label for=""> <input type="checkbox" id="tercaCustom">Terça-feira</label>
+            <input type="time" id="tercaInicio"><span> até </span><input type="time" id="tercaFim">
+            <label for=""> <input type="checkbox" id="quartaCustom">Quarta-feira</label>
+            <input type="time" id="quartaInicio"><span> até </span><input type="time" id="quartaFim">
+            <label for=""> <input type="checkbox" id="quintaCustom">Quinta-feira</label>
+            <input type="time" id="quintaInicio"><span> até </span><input type="time" id="quintaFim">
+            <label for=""> <input type="checkbox" id="sextaCustom">Sexta-feira</label>
+            <input type="time" id="sextaInicio"><span> até </span><input type="time" id="sextaFim">
+            <label for=""> <input type="checkbox" id="sabadoCustom">Sábado</label>
+            <input type="time" id="sabadoInicio"><span> até </span><input type="time" id="sabadoFim">
+            <label for=""> <input type="checkbox" id="domingoCustom">Domingo</label>
+            <input type="time" id="domingoInicio"><span> até </span><input type="time" id="domingoFim">
+        </div>
+    </div>
+
+    <button type="submit" id="continuar">Continuar</button>
+
+    <script>
+        document.getElementById('continuar').addEventListener('click', function() {
+            // Dias disponíveis
+    const dias = [];
+    if (document.getElementById('segunda').checked) dias.push('Segunda-feira');
+    if (document.getElementById('terca').checked) dias.push('Terça-feira');
+    if (document.getElementById('quarta').checked) dias.push('Quarta-feira');
+    if (document.getElementById('quinta').checked) dias.push('Quinta-feira');
+    if (document.getElementById('sexta').checked) dias.push('Sexta-feira');
+    if (document.getElementById('sabado').checked) dias.push('Sábado');
+    if (document.getElementById('domingo').checked) dias.push('Domingo');
+
+    // Obter horários
+    const horarios = [];
+    if (document.getElementById('manha').checked) horarios.push('Manhã (08:00 - 12:00)');
+    if (document.getElementById('tarde').checked) horarios.push('Tarde (12:00 - 18:00)');
+    if (document.getElementById('noite').checked) horarios.push('Noite (18:00 - 22:00)');
+            // Disponibilidade customizada
+            let disponibilidadeCustomizada = {};
+            let customAvailable = false;
+
+            if (document.getElementById('segundaCustom').checked) {
+                customAvailable = true;
+                disponibilidadeCustomizada['Segunda-feira'] = {
+                    inicio: document.getElementById('segundaInicio').value,
+                    fim: document.getElementById('segundaFim').value
+                };
+            }
+            if (document.getElementById('tercaCustom').checked) {
+                customAvailable = true;
+                disponibilidadeCustomizada['Terça-feira'] = {
+                    inicio: document.getElementById('tercaInicio').value,
+                    fim: document.getElementById('tercaFim').value
+                };
+            }
+            if (document.getElementById('quartaCustom').checked) {
+                customAvailable = true;
+                disponibilidadeCustomizada['Quarta-feira'] = {
+                    inicio: document.getElementById('quartaInicio').value,
+                    fim: document.getElementById('quartaFim').value
+                };
+            }
+            if (document.getElementById('quintaCustom').checked) {
+                customAvailable = true;
+                disponibilidadeCustomizada['Quinta-feira'] = {
+                    inicio: document.getElementById('quintaInicio').value,
+                    fim: document.getElementById('quintaFim').value
+                };
+            }
+            if (document.getElementById('sextaCustom').checked) {
+                customAvailable = true;
+                disponibilidadeCustomizada['Sexta-feira'] = {
+                    inicio: document.getElementById('sextaInicio').value,
+                    fim: document.getElementById('sextaFim').value
+                };
+            }
+            if (document.getElementById('sabadoCustom').checked) {
+                customAvailable = true;
+                disponibilidadeCustomizada['Sábado'] = {
+                    inicio: document.getElementById('sabadoInicio').value,
+                    fim: document.getElementById('sabadoFim').value
+                };
+            }
+            if (document.getElementById('domingoCustom').checked) {
+                customAvailable = true;
+                disponibilidadeCustomizada['Domingo'] = {
+                    inicio: document.getElementById('domingoInicio').value,
+                    fim: document.getElementById('domingoFim').value
+                };
+            }
+
+            // Validação
+            if (dias.length === 0 && horarios.length === 0 && !customAvailable) {
+                alert("Por favor, selecione pelo menos um dia e um horário disponíveis.");
+                return;
+            }
+
+            // Verificar horários customizados
+            if (customAvailable) {
+                for (const [dia, { inicio, fim }] of Object.entries(disponibilidadeCustomizada)) {
+                    if (!inicio || !fim) {
+                        alert(`Por favor, preencha os horários de ${dia}.`);
+                        return;
+                    }
+                }
+            }
+            
+        let disponibilidade = {
+        dias: dias,
+        horarios: horarios
+    }
+    
+    localStorage.setItem('disponibilidade', JSON.stringify(disponibilidade));
+    localStorage.setItem('disponibilidadeCustomizada', JSON.stringify(disponibilidadeCustomizada));
+
+            // Redirecionar para o próximo formulário
+            //alert('Informações salvas com sucesso!');
+            window.location.href = "CadastroForm7.html";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/CadastroForm9.css">
+    <script src="js/cadastro1.js"></script>
+    <link rel="shortcut icon" href="img/menuTop.png" type="image/x-icon">
+    <title>Cadastro8</title>
+</head>
+<body>
+    <a href="CadastroForm7.html"><img class="seta" src="img/seta.svg" alt=""></a>
+    <h1>Cadastro</h1>
+    <div class="container">
+
+      <div class= "progress-bar">
+        <div class="step" >
+          <div class="bullet"id="bullet1">
+        </div>
+      </div>
+  
+        <div class="step" > 
+          <div class="bullet" id="bullet2">
+        </div>
+        </div>
+  
+        <div class="step">
+          <div class="bullet" id="bullet3">
+        </div> 
+        </div>
+
+        <div class="step">
+          <div class="bullet" id="bullet4">
+        </div> 
+        </div>
+
+        <div class="step">
+          <div class="bullet" id="bullet5">
+        </div> 
+        </div>
+
+        <div class="step">
+          <div class="bullet" id="bullet6">
+        </div> 
+        </div>
+
+        <div class="step">
+          <div class="bullet" id="bullet7">
+        </div> 
+        </div>
+  
+        <div class="step">
+          <div class="bullet" id="bullet8">
+        </div>
+        </div>
+      </div>
+  </div>
+        
+        <p style="margin-bottom: 20px; text-align: center;">Interesses e preferências</p>
+        
+        
+</div>
+
+<div class="container2">
+    <div class="section1">
+      <h2>Atividades preferidas</h2>
+      <p>Selecione ou adicione suas atividades preferidas.</p>
+      <div class="button-group" id="atividade-group">
+        <input type="text"  id="atividade-input1" class="buttons-outros" placeholder="Outro...">
+        <button class="buttons">Leitura</button>
+        <button class="buttons">Caminhadas</button>
+        <button class="buttons">Jardinagem</button>
+        <button class="buttons">Tricô</button>
+        <button class="buttons">Culinária</button>
+        <button class="buttons">Jogos de tabuleiro</button>
+        <button class="buttons">Pintura</button>
+        <button class="buttons">Escrever cartas</button>
+        <button class="buttons">Costura</button>
+        <button class="buttons">Dança</button>
+        <button class="buttons">Pesca</button>
+        <button class="buttons">Fotografia</button>
+        <button class="buttons">Yoga</button>
+        <button class="buttons">Piqueniques</button>
+        <button class="buttons">Xadrez</button>
+        <button class="buttons">Tai Chi</button>
+        <button class="buttons">Crochê</button>
+        <button class="buttons">Bordado</button>
+        <button class="buttons">Viagens</button>
+        <button class="buttons">Caminhadas</button>
+        <button class="buttons">Tocar um instrumento musical</button>
+        <button class="buttons">Cuidar de animais de estimação</button>
+       
+      </div>
+    </div>
+    <div class="section2">
+      <h2>Interesses em entretenimento</h2>
+      <p>Selecione ou adicione seus interesses em entretenimento.</p>
+      <div class="button-group" id="entretenimento-group">
+        <input type="text" class="buttons-outros" id="atividade-input" placeholder="Outro...">
+        <button class="buttons">Ouvir música</button>
+        <button class="buttons">Assistir filmes</button>
+        <button class="buttons">Teatro</button>
+        <button class="buttons">Rádio</button>
+        <button class="buttons">Circo</button>
+        <button class="buttons">Concertos musicais</button>
+        <button class="buttons">Danças sociais</button>
+        <button class="buttons">Jogos de palavras-cruzadas</button>
+        <button class="buttons">Palestras</button>
+        <button class="buttons">Audiolivros</button>
+        <button class="buttons">Podcast</button>
+        <button class="buttons">Desfiles</button>
+        <button class="buttons">Ópera</button>
+        <button class="buttons">Jogos de bingo</button>
+        <button class="buttons">Jornal</button>
+        <button class="buttons">Clubes de leitura</button>
+        <button class="buttons">Poesia</button>
+        <button class="buttons">Exposições de arte</button>
+        <button class="buttons">Assistir a séries de TV</button>
+        <button class="buttons">Tours virtuais de museus</button>
+        <button class="buttons">Programas de cunho religioso</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="button-wrapper">
+    <a href=""><button type="submit" id="botao">Continuar</button></a>
+</div> 
+
+ <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Arrays para armazenar atividades e entretenimento
+    let atividadesPreferidas = [];
+    let interessesEntretenimento = [];
+
+    // Selecionar todos os botões de atividades
+    const atividadeButtons = document.querySelectorAll('#atividade-group .buttons');
+    const atividadeInput = document.getElementById('atividade-input1');
+    
+    // Selecionar todos os botões de entretenimento
+    const entretenimentoButtons = document.querySelectorAll('#entretenimento-group .buttons');
+    const entretenimentoInput = document.getElementById('atividade-input');
+
+    // Captura de atividades ao clicar nos botões
+    atividadeButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        const atividade = button.textContent.trim();
+        if (!atividadesPreferidas.includes(atividade)) {
+          atividadesPreferidas.push(atividade);
+          console.log('Atividades preferidas:', atividadesPreferidas);
+        }
+      });
+    });
+
+    // Captura de entretenimento ao clicar nos botões
+    entretenimentoButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        const interesse = button.textContent.trim();
+        if (!interessesEntretenimento.includes(interesse)) {
+          interessesEntretenimento.push(interesse);
+          console.log('Interesses em entretenimento:', interessesEntretenimento);
+        }
+      });
+    });
+
+    // Adiciona atividade personalizada
+    atividadeInput.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter') {
+        const atividadeCustom = atividadeInput.value.trim();
+        if (atividadeCustom && !atividadesPreferidas.includes(atividadeCustom)) {
+          atividadesPreferidas.push(atividadeCustom);
+          console.log('Atividade personalizada adicionada:', atividadeCustom);
+          atividadeInput.value = ''; // Limpa o campo
+        }
+      }
+    });
+
+    // Adiciona interesse personalizado
+    entretenimentoInput.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter') {
+        const interesseCustom = entretenimentoInput.value.trim();
+        if (interesseCustom && !interessesEntretenimento.includes(interesseCustom)) {
+          interessesEntretenimento.push(interesseCustom);
+          console.log('Interesse personalizado adicionado:', interesseCustom);
+          entretenimentoInput.value = ''; // Limpa o campo
+        }
+      }
+    });
+
+    // Função de validação
+    function validateFields() {
+      if (atividadesPreferidas.length === 0) {
+        alert('Por favor, selecione ou adicione pelo menos uma atividade preferida.');
+        return false;
+      }
+      if (interessesEntretenimento.length === 0) {
+        alert('Por favor, selecione ou adicione pelo menos um interesse em entretenimento.');
+        return false;
+      }
+      return true;
+    }
+
+    // Botão de continuar
+    const botaoContinuar = document.getElementById('botao');
+    botaoContinuar.addEventListener('click', function (event) {
+      event.preventDefault(); // Evita o redirecionamento imediato
+
+      // Valida os campos
+      if (!validateFields()) {
+        return; // Não prossegue se a validação falhar
+      }
+
+      // Salva as atividades e entretenimento no localStorage
+      localStorage.setItem('atividadesPreferidas', JSON.stringify(atividadesPreferidas));
+      localStorage.setItem('interessesEntretenimento', JSON.stringify(interessesEntretenimento));
+
+      //alert('Dados salvos com sucesso!');
+      // Aqui você pode redirecionar para outra página se necessário
+      window.location.href = 'CadastroForm9.html';
+    });
+  });
+</script>
+
+
+</body>
+</html>

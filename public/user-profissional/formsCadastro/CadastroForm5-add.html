@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro5</title>
+    <!-- Inclua o Font Awesome para usar os ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/CadastroForm3.css">
+    <link rel="shortcut icon" href="img/menuTop.png" type="image/x-icon">
+    
+    <script>
+        function loadLicenseName() {
+            const licenseName = localStorage.getItem("currentLicenseName");
+            if (licenseName) {
+                document.getElementById("licenseName").value = licenseName;
+            }
+        }
+
+        function toggleDisplay(option) {
+            const fileOption = document.getElementById('fileOption');
+            const linkOption = document.getElementById('linkOption');
+
+            if (option === 'file') {
+                fileOption.style.display = 'block';
+                linkOption.style.display = 'none';
+            } else if (option === 'link') {
+                fileOption.style.display = 'none';
+                linkOption.style.display = 'block';
+            }
+        }
+
+        function updateFileName() {
+            const input = document.getElementById('input-file');
+            const fileName = document.getElementById('file-name');
+            const removeButton = document.getElementById('remove-file');
+
+            if (input.files.length > 0) {
+                fileName.textContent = input.files[0].name;
+                removeButton.style.display = 'inline';
+            } else {
+                fileName.textContent = '';
+                removeButton.style.display = 'none';
+            }
+        }
+
+        function removeFile() {
+            const input = document.getElementById('input-file');
+            document.getElementById('file-name').textContent = '';
+            input.value = '';
+            document.getElementById('remove-file').style.display = 'none';
+        }
+
+        function saveLicenseDetails() {
+            const license = {
+                name: document.getElementById("licenseName").value,
+                category: document.getElementById("category").value,
+                institution: document.getElementById("institution").value,
+                startDate: document.getElementById("startDate").value,
+                endDate: document.getElementById("endDate").value,
+                proof: document.getElementById("input-file").files[0] 
+                    ? document.getElementById("input-file").files[0].name 
+                    : document.querySelector("#linkOption input").value
+            };
+
+            let licenses = JSON.parse(localStorage.getItem("licenses") || "[]");
+            licenses.push(license);
+            localStorage.setItem("licenses", JSON.stringify(licenses));
+
+            window.location.href = "CadastroForm4.html";
+        }
+
+        document.addEventListener("DOMContentLoaded", loadLicenseName);
+    </script>
+
+</head>
+<body>
+    <a href="CadastroForm4.html"><img class="seta" src="img/seta.svg" alt=""></a>
+    <h1 style="margin-top: 15px;">Adicionar licença ou certificado</h1>
+
+    <div class="content" style="background-color: #fff; border-radius: 24px; padding: 30px 0px; margin-top: 20px; width: 80%;">
+
+        <div class="content1" >
+            
+            <label for="licenseName">Nome</label>
+            <input type="text" id="licenseName" readonly placeholder="Nome da licença ou certificado (já preenchido)">
+            
+            <label for="category">Categoria</label>
+            <select id="category" required>
+                <option value="" selected disabled>Selecionar</option>
+                <option value="curso">Curso</option>
+                <option value="especialização">Especialização</option>
+                <option value="certificação">Certificação</option>
+                <option value="habilitação">Habilitação</option>
+                <option value="diploma">Diploma</option>
+                <option value="qualificação">Qualificação</option>
+                <option value="capacitação">Capacitação</option>
+                <option value="licençaProfissional">Licença Profissional</option>
+                <option value="residência">Residência</option>
+                <option value="credenciamento">Credenciamento</option>
+            </select>
+            
+            <label for="">Instituição de formação</label>
+            <input type="text" id="institution" placeholder="Digite o nome da instituição que conferiu sua habilitação profissional" required>
+            
+            <label for="">Data de início</label>
+            <input type="date" id="startDate" required>
+            
+            <label for="">Data de conclusão</label>
+            <input type="date" id="endDate" required>
+        </div>
+    
+        <div class="content2">
+            <label for="">Comprovação de formação</label>
+            <div class="btn">
+                <button id="btn-style" id="btn-file" type="button" onclick="toggleDisplay('file')" style="background-color: #fff; border: 1px solid #fff;">Arquivo</button>
+                <button id="btn-style" id="btn-link" type="button" onclick="toggleDisplay('link')"style="background-color: #fff; border: 1px solid #fff;">Link</button>
+            </div>
+            <!-- Seção para upload de arquivo -->
+            <div id="fileOption" style="display: none;">
+                <p>Por favor, anexe um documento comprobatório  <br> 
+                    de sua formação. O arquivo deve estar em um dos <br> 
+                     seguintes formatos: PDF, JPG, PNG ou DOCX, e deve ter <br>
+                     entre 50 KB e 10 MB.</p>
+                
+                    <label class="labelFile" for='input-file' style="cursor: pointer;">Selecionar um arquivo<i class="fas fa-folder"style="margin-left: 5px;"></i></label>
+                    <input id='input-file' type='file' onchange="updateFileName()" />
+                    <span id='file-name'></span>
+                    <!-- Botão de remoção com ícone de lixo -->
+                    <button type='button' id='remove-file' onclick="removeFile()" style="display:none;">
+                        <i class="fas fa-trash"></i>
+                    </button>
+            </div>
+            <!-- Seção para inserção de link -->
+            <div id="linkOption" style="display: none;">
+              <div>
+                <p>Por favor, insira o link da credencial, registro profissional <br>
+                    ou do verificador oficial da sua formação para validar<br>
+                      sua autenticidade.</p>
+            </div>
+                <input type="text" placeholder="Ex: https://examplo.com/registro-profissional">
+            </div>
+        </div>
+    </div>
+    
+    <button class="proximo" onclick="saveLicenseDetails()">Concluir</button>  
+    
+</body>
+</html>

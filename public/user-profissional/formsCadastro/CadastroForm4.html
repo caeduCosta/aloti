@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro4</title>
+    <link rel="stylesheet" href="css/CadastroForm4.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="shortcut icon" href="img/menuTop.png" type="image/x-icon">
+    
+    <script>
+      function addNewLicense() {
+        const newLicenseName = document.getElementById("newLicense").value.trim();
+        if (newLicenseName === "") {
+            alert("Por favor, insira o nome da licença ou certificado.");
+            return;
+        }
+        // Armazena o nome da licença temporariamente no localStorage e redireciona para CadastroForm5-add.html
+        localStorage.setItem("currentLicenseName", newLicenseName);
+        window.location.href = "CadastroForm5-add.html";
+    }
+      function loadLicenses() {
+          const licenses = JSON.parse(localStorage.getItem("licenses") || "[]");
+          const licenseList = document.getElementById("licenseList");
+          licenseList.innerHTML = ""; 
+
+          licenses.forEach((license, index) => {
+              const newDiv = document.createElement("div");
+              newDiv.classList.add("Especializacao");
+
+              const iconDiv = document.createElement("div");
+              iconDiv.classList.add("Especializacaoimg");
+              const iconImg = document.createElement("img");
+              iconImg.classList.add("medal");
+              iconImg.src = "img/medal.svg";
+              iconDiv.appendChild(iconImg);
+
+              const newText = document.createElement("p");
+              newText.innerText = license.name;
+
+              const deleteButton = document.createElement("button");
+              deleteButton.classList.add("delete");
+              deleteButton.innerHTML = '<i class="fas fa-trash"></i>';
+              deleteButton.onclick = function () {
+                  deleteLicense(index);
+              };
+
+              newDiv.appendChild(iconDiv);
+              newDiv.appendChild(newText);
+              newDiv.appendChild(deleteButton);
+              licenseList.appendChild(newDiv);
+          });
+      }
+
+      function deleteLicense(index) {
+          let licenses = JSON.parse(localStorage.getItem("licenses") || "[]");
+          licenses.splice(index, 1);
+          localStorage.setItem("licenses", JSON.stringify(licenses));
+          loadLicenses();
+          checkFields();
+      }
+
+      function saveExperience() {
+          const experience = document.getElementById("experience").value;
+          localStorage.setItem("experience", experience);
+      }
+
+      function checkFields() {
+          const experience = document.getElementById("experience").value.trim();
+          const licenses = JSON.parse(localStorage.getItem("licenses") || "[]");
+
+          const nextButton = document.querySelector(".proximo");
+          if (experience || licenses.length > 0) {
+              nextButton.disabled = false;
+          } else {
+              nextButton.disabled = true;
+          }
+      }
+
+      function nextForm() {
+          saveExperience();
+          //alert("Os dados foram salvos com sucesso. Você será redirecionado para o próximo formulário.");
+          window.location.href = "CadastroForm6.html";
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+          loadLicenses();
+          checkFields();
+          
+          document.getElementById("experience").addEventListener("input", checkFields);
+      });
+    </script>
+
+    
+</head>
+<body>
+    <a href="CadastroForm3.html"><img class="seta" src="img/seta.svg" alt=""></a>
+    <h1>Cadastro</h1>
+    <div class="container">
+
+      <div class= "progress-bar">
+        <div class="step" >
+          <div class="bullet"id="bullet1">
+        </div>
+      </div>
+  
+        <div class="step" > 
+          <div class="bullet" id="bullet2">
+        </div>
+        </div>
+  
+        <div class="step">
+          <div class="bullet" id="bullet3">
+        </div> 
+        </div>
+
+        <div class="step">
+          <div class="bullet" id="bullet4">
+        </div> 
+        </div>
+
+        <div class="step">
+          <div class="bullet" id="bullet5">
+        </div> 
+        </div>
+
+        <div class="step">
+          <div class="bullet" id="bullet6">
+        </div> 
+        </div>
+
+        <div class="step">
+          <div class="bullet" id="bullet7">
+        </div> 
+        </div>
+  
+        <div class="step">
+          <div class="bullet" id="bullet8">
+        </div>
+        </div>
+      </div>
+  </div>
+    
+    <p class="pessoais">Informações profissionais</p>
+    <div class="content">
+        <div class="content1">
+            <label for="">Licenças e certificados</label>
+          <div class="input-group" style="display: flex;">
+            <input type="text" required placeholder="Nome da licença ou certificado" id="newLicense">
+            <button class="mais" onclick="addNewLicense()"><i class="fas fa-plus" style="color: #ffff;"></i></button>
+        </div>
+        
+          <h2>Licenças e certificados adicionados</h2>
+          
+          <div id="licenseList">
+            <!--Modelo de como deve ser listado:
+            <div class="Especializacao">
+            <div class="Especializacaoimg"><img class="medal" src="img/medal.svg" alt=""></div>
+            <p id="text1">Especialização em Enfermagem Geriátrica</p>
+            <button class="delete" onclick="deleteLicense(this)"><i class="fas fa-trash"></i></button>
+        </div>
+            -->
+          </div>
+        
+        </div>
+
+        <div class="content2">
+          <label for="experience" style="margin-bottom: 10px;">Experiência</label>
+          <textarea name="" id="experience" placeholder="Descreva brevemente sua experiência profissional, incluindo locais onde trabalhou, funções desempenhadas e tempo de atuação."></textarea>
+        </div>
+
+      
+    </div>
+
+    
+
+        <button class="proximo" type="submit" onclick="nextForm()">Próximo</button>
+</body>
+</html>

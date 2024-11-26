@@ -1,0 +1,88 @@
+@font-face {
+  font-family: "Nunito-regular";
+  src: url(../font/Nunito-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Nunito-semibold";
+  src: url(../font/Nunito-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: "Nunito-bold";
+  src: url(../font/Nunito-Bold.ttf);
+}
+
+body {
+  font-family: "Nunito";
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 100%; /* Garante que a largura da container seja ajustável */
+  box-sizing: border-box;
+}
+
+h1 {
+  color: #db7495;
+  font-family: "Nunito-bold";
+  padding-top: 10px;
+}
+
+/* Centraliza o formulário */
+.task-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Estilo para os grupos de formulário */
+.form-group {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+/* Estilo dos campos de entrada */
+textarea {
+  resize: none;
+}
+
+textarea,
+input[type="time"] {
+  width: 100%;
+  padding: 10px;
+  background-color: white;
+  border: none;
+  border-radius: 12px;
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+}
+
+/* Estilo dos rótulos */
+label {
+  color: #34a087;
+  font-family: "Nunito-bold";
+  font-size: 20px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Estilo do botão */
+button {
+  border-radius: 20px;
+  padding: 10px 80px;
+  margin-top: 20px;
+  background-color: #34a087;
+  border: none;
+  color: #fff;
+  font-family: "Nunito-bold";
+  font-size: 18px;
+  cursor: pointer;
+}

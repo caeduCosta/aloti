@@ -1,0 +1,635 @@
+
+@font-face {
+	font-family: "Nunito_bold";
+	src: url(../../font/Nunito-Bold.ttf);
+  }
+  
+  @font-face {
+	font-family: "Nunito_medium";
+	src: url(../../font/Nunito-Medium.ttf);
+  }
+  
+  @font-face {
+	font-family: "Nunito_regular";
+	src: url(../../font/Nunito-Regular.ttf);
+  } 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.5;
+  font-family: Nunito;
+  box-sizing: border-box;
+  background-color: #005351
+}
+
+.container1 {
+  background-color: #005351;
+  width: auto;
+  height: auto;
+}
+
+
+h2 {
+  color: #005351;
+}
+
+.preco{
+  color: #DB7495;
+  font-size: 30px;
+  margin-bottom: 0px;
+  margin-top: 10px;
+}
+
+.InformaçõesProfissionais {
+  font-family: Nunito;
+}
+
+.texto {
+  font-family: "Nunito-regular";
+  display: flex;
+  align-items: flex-start;
+  margin: 10px 0;
+}
+
+.verde {
+  flex: 0 0 200px;
+  /* Largura fixa para os títulos */
+  color: #34a087;
+  font-weight: 600;
+  font-family: "Nunito-semibold";
+}
+
+.textos {
+  flex: 1;
+  margin-left: 10px;
+  /* Espaçamento entre o título e o texto */
+}
+
+.textos p {
+  margin: 0;
+  /* Remove a margem padrão dos parágrafos dentro de .textos */
+}
+
+.subtitulo {
+  font-family: "Nunito-semibold";
+  color: rgb(87, 87, 87);
+  font-size: 18px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.subtitulo1 {
+  font-family: "Nunito-semibold";
+  color: rgb(87, 87, 87);
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.ServiçosDisponibilidade {
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
+.InformaçõesProfissionais {
+  margin-left: 30px;
+  margin-bottom: 30px;
+  /* padding-right: 90px; */
+}
+
+.InformaçõesPessoais {
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
+.perfil {
+  background-color: #f5f6fa;
+  border-radius: 55px 55px 0 0;
+  width: 100%;
+  height: 80em;
+}
+
+.perfil2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.containt {
+  top: 70px;
+  margin-bottom: 20px;
+}
+
+.Fundoverde {
+  height: 233px;
+}
+
+.contratar {
+  height: 96px;
+  background-color: #f5f6fa;
+  display: flex;
+  align-items: center;
+}
+
+/* .buttons {
+  margin-left: 980px;
+} */
+
+div2 {
+  display: flex;
+}
+
+.contrat img {
+  width: 66px;
+  height: 66px;
+  border-radius: 100px;
+}
+
+.estrelas {
+  display: block;
+  margin: auto;
+  margin-bottom: 5px;
+  margin-top: 70px;
+  height: 30%;
+}
+
+.informacaoes {
+  font-family: "Nunito-bold";
+  font-size: 30px;
+  margin-left: 30px;
+}
+
+.hora {
+  margin: 0;
+  font-size: 20px;
+}
+
+.grupo-btn {
+  width: 400px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 5px;
+}
+
+.favoritos {
+  background-color: #34a087;
+  width: 200px;
+  height: 40px;
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 16px;
+  border: #34a087 1px solid;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.buttonContrar {
+  background-color: #DB7495;
+  width: 250px;
+  height: 40px;
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 16px;
+  border: #DB7495 1px solid;
+  /* font-family: "Nunito_regular"; */
+}
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 55px 5px 0;
+  gap: 10px;
+  font-family: "Nunito_regular";
+}
+
+.enviarMensagem{
+  background-color: #34A087;
+  width: 250px;
+  height: 40px;
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 16px;
+  border: #34A087 1px solid;
+ 
+}
+
+.editar {
+  background-color: #34a087;
+  width: 200px;
+  height: 40px;
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 16px;
+  border: #34a087 1px solid;
+  margin-left: 10px;
+}
+
+
+
+.contratarEnfermeira {
+  margin: 0px;
+}
+
+.MariaLucia {
+  margin: 0px;
+}
+
+.mariaLucia2 {
+  font-family: "Nunito-bold";
+  font-size: 30px;
+  margin: -60px;
+}
+
+.imgPerfil {
+  border-radius: 100%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.imgPerfil1 {
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin: 0px 20px;
+}
+
+.circle {
+  /* width: 150px;
+    height: 150px; */
+  margin: auto;
+  border-radius: 50%;
+
+  position: relative;
+  top: -70px;
+}
+
+p {
+  font-size: 18px;
+}
+.coracao {
+  background: #F5F6FA;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 3px;
+  left: 65%;
+}
+
+.coracao img{
+  width: 30px;
+  height: 30px;
+}
+
+@media (max-width: 528px) {
+  .buttons{
+    flex-direction: column;
+    margin-left: 50px;
+    gap: 5px;
+  
+  }
+}
+
+@media (max-width: 544px) {
+  .buttons{
+    flex-direction: column;
+    margin-left: 50px;
+    gap: 5px;
+  
+  }
+}
+
+@media (max-width: 500px) {
+.buttons{
+  flex-direction: column;
+  margin-left: 50px;
+  gap: 5px;
+
+}
+.enviarMensagem, .buttonContra{
+  width: 140px;
+}
+}
+
+
+
+@media (max-width: 760px) {
+  .buttons{
+    gap: 5px;
+  
+  }
+  .enviarMensagem, .buttonContra{
+    width: 140px;
+  }
+  }
+
+@media screen and (max-width: 430px) {
+  .perfil {
+      height: auto; /* Ajustar altura automaticamente em telas menores */
+      padding-bottom: 20px; /* Reduzir o padding inferior */
+  }
+
+
+  .perfil2 {
+      padding-bottom: 20px;
+  }
+
+
+  .circle {
+      width: 150px;
+      height: 150px;
+      /* top: -50px; */
+  }
+
+
+  .imgPerfil {
+      width: 150px;
+      height: 150px;
+  }
+
+
+  .coracao {
+      width: 25px;
+      height: 25px;
+      bottom: 45px;
+      right: 5px;
+      
+      transform: translateX(-50%);
+  }
+
+
+  .estrelas {
+      margin-bottom: 15px;
+      height: auto;
+  }
+
+
+  .buttons  {
+      flex-direction: column;
+      width: 150px;
+      margin: 0;
+      gap: 5px;
+  }
+
+
+  .containt {
+      margin-bottom: 10px;
+      margin-top: -30px; /* Ajuste menor para telas menores */
+  }
+
+
+  .informacaoes {
+      font-size: 24px;
+      margin-left: 20px;
+  }
+
+
+  .texto {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+
+  .verde {
+      flex: none;
+      margin-bottom: 5px;
+  }
+
+
+  .textos {
+      margin-left: 0;
+  }
+  .enviarMensagem{
+    width: 140px;
+  }
+
+  button{
+    width: 140px;
+  }
+}
+
+
+@media screen and (max-width: 457px) {
+  .perfil {
+      height: auto; /* Ajustar altura automaticamente em telas menores */
+      padding-bottom: 20px; /* Reduzir o padding inferior */
+  }
+
+
+  .perfil2 {
+      padding-bottom: 20px;
+  }
+
+
+  .circle {
+      width: 150px;
+      height: 150px;
+      /* top: -50px; */
+  }
+
+
+  .imgPerfil {
+      width: 150px;
+      height: 150px;
+  }
+
+
+  .coracao {
+      width: 25px;
+      height: 25px;
+      bottom: 45px;
+      right: 5px;
+      
+      transform: translateX(-50%);
+  }
+
+
+  .estrelas {
+      margin-bottom: 15px;
+      height: auto;
+  }
+
+
+  .buttons  {
+      flex-direction: column;
+      width: 150px;
+      margin: 0;
+      gap: 5px;
+  }
+
+
+  .containt {
+      margin-bottom: 10px;
+      margin-top: -30px; /* Ajuste menor para telas menores */
+  }
+
+
+  .informacaoes {
+      font-size: 24px;
+      margin-left: 20px;
+  }
+
+
+  .texto {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+
+  .verde {
+      flex: none;
+      margin-bottom: 5px;
+  }
+
+
+  .textos {
+      margin-left: 0;
+  }
+  .enviarMensagem, .buttonContra{
+    width: 140px;
+  }
+
+  button{
+    width: 140px;
+  }
+}
+/* Responsividade */
+@media(max-width: 1920px) {
+  .perfil {
+    height: 86em;
+  }
+}
+
+@media(max-width: 995px) {
+  .perfil {
+    height: 86em;
+  }
+}
+
+@media (max-width: 835px) {
+  .perfil {
+    height: 105em;
+  }
+}
+
+@media (max-width: 790px) {
+  .perfil {
+    height: auto;
+  }
+
+  .grupo-btn {
+    width: 200px;
+    flex-wrap: wrap;
+  }
+
+  .texto {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .verde {
+    flex: none;
+    width: 100%;
+  }
+
+  .textos {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .perfil {
+    width: 100%;
+    padding: 15px;
+    height: auto;
+  }
+
+  .perfil2 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .circle {
+    margin: 0;
+  }
+
+  .imgPerfil {
+    width: 120px;
+    height: 120px;
+  }
+
+  .texto {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .verde {
+    flex: none;
+    width: 100%;
+  }
+
+  .textos {
+    margin-left: 0;
+  }
+
+  .favoritos,
+  .editar {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 485px) {
+  .imgPerfil {
+    width: 100px;
+    height: 100px;
+  }
+
+  .informacaoes {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .subtitulo {
+    font-size: 15px;
+  }
+
+  .subtitulo1 {
+    font-size: 15px;
+  }
+
+  .favoritos,
+  .editar {
+    font-size: 14px;
+    width: 90%;
+  }
+
+  .Fundoverde {
+    height: 200px;
+  }
+
+  .perfil {
+    height: auto;
+  }
+}
+
+@media (max-width: 380px) {
+  .grupo-btn {
+    margin-left: auto;
+  }
+}

@@ -1,0 +1,46 @@
+@font-face {
+	font-family: "Nunito_bold";
+	src: url(../../font/Nunito-Bold.ttf);
+  }
+  
+  @font-face {
+	font-family: "Nunito_medium";
+	src: url(../../font/Nunito-Medium.ttf);
+  }
+  
+  @font-face {
+	font-family: "Nunito_regular";
+	src: url(../../font/Nunito-Regular.ttf);
+  } 
+  
+
+body {
+    font-family: "Nunito";
+    background-color: #F5F5F5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 20px;  
+    max-width: 100%; /* Garante que a largura da container seja ajustável */
+    box-sizing: border-box;
+}
+body .titulo{
+    font-family: "Nunito_bold" ;
+    color: #626264;
+    font-weight: 900;
+}
+h2{
+    color: #005351;
+    margin-top: 20px;
+    margin-left: 10px;
+    font-weight: 650;
+}
+.texto{
+    color: #000000;
+    margin-left: 10px;
+    text-align: justify;
+    font-size: 20px;
+}
