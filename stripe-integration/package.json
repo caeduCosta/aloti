@@ -1,0 +1,21 @@
+{
+  "name": "stripe-integration",
+  "version": "1.0.0",
+  "description": "Integration with Stripe for payment processing - Aloti",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "stripe",
+    "payments",
+    "integration"
+  ],
+  "author": "Aloti",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "stripe": "^17.4.0"
+  }
+}
